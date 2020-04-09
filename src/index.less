@@ -1,0 +1,170 @@
+@import './styles/reset.min.css';
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+main {
+    margin: 0 auto;
+    width: 600px;
+
+
+    div.item-list {
+        @height: calc(~'100vh - 74px');
+        max-height: @height;
+        min-height: @height;
+
+        overflow-y: scroll;
+
+
+        > .buttons {
+            margin: 5px 0;
+            padding: 10px 0;
+
+
+            > button {
+                padding: 5px 9px;
+
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+
+                color: #3a3a3a;
+
+                outline: none;
+                user-select: none;
+
+
+                &:hover {
+                    background-color: #eeeef7;
+                    cursor: pointer;
+                }
+
+
+                & + button {
+                    margin-left: 10px;
+                }
+
+
+                > span:not(.rc-checkbox) {
+                    margin-left: 9px;
+                }
+            }
+        }
+
+
+        > .item {
+            position: relative;
+
+            display: block;
+            padding: 10px;
+
+            border-bottom: 1px solid #ccc;
+
+
+            &:hover {
+                background-color: #f2f4f7;
+                cursor: pointer;
+
+                > .delete-button {
+                    display: block;
+                }
+            }
+
+            &.-done {
+                > .content {
+                    color: #9a9a9a;
+                }
+            }
+            
+            
+            > input[type="checkbox"],
+            > span.rc-checkbox {
+                margin-top: 5px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: top;
+            }
+    
+            > .content {
+                width: 100%;
+
+                font-size: 20px;
+                line-height: 24px;
+
+                user-select: none;
+            }
+
+            > button.delete-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+
+                display: none;
+                width: 30px;
+                padding: 0;
+
+                background-color: transparent;
+                border: none;
+
+                color: #9a9a9a;
+                font-size: 14px;
+                line-height: 30px;
+
+                outline: none;
+                user-select: none;
+                z-index: 100;
+
+
+                &:hover {
+                    cursor: pointer;
+
+                    color: #4a4a4a;
+                }
+            }
+        }
+
+        > .message {
+            padding: 30px 10px;
+
+            color: #9a9a9a;
+            text-align: center;
+        }
+    }
+
+    form.todo-form {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+
+        input {
+            width: 100%;
+            padding: 10px 15px;
+        
+            font-size: 20px;
+        
+            &:focus {
+                outline: none;
+            }
+        }
+
+        label {
+            display: block;
+        
+            color: #3a3a3a;
+            font-size: 24px;
+        
+            & + input {
+                margin-top: 20px;
+            }
+        }
+    }
+}

@@ -1,13 +1,116 @@
+@import 'styles/reset.min.css';
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+main {
+  margin: 0 auto;
+  width: 600px;
+}
+main div.item-list {
+  max-height: calc(100vh - 74px);
+  min-height: calc(100vh - 74px);
+  overflow-y: scroll;
+}
+main div.item-list > .buttons {
+  margin: 5px 0;
+  padding: 10px 0;
+}
+main div.item-list > .buttons > button {
+  padding: 5px 9px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #3a3a3a;
+  outline: none;
+  user-select: none;
+}
+main div.item-list > .buttons > button:hover {
+  background-color: #eeeef7;
+  cursor: pointer;
+}
+main div.item-list > .buttons > button + button {
+  margin-left: 10px;
+}
+main div.item-list > .buttons > button > span:not(.rc-checkbox) {
+  margin-left: 9px;
+}
+main div.item-list > .item {
+  position: relative;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+main div.item-list > .item:hover {
+  background-color: #f2f4f7;
+  cursor: pointer;
+}
+main div.item-list > .item:hover > .delete-button {
+  display: block;
+}
+main div.item-list > .item.-done > .content {
+  color: #9a9a9a;
+}
+main div.item-list > .item > input[type="checkbox"],
+main div.item-list > .item > span.rc-checkbox {
+  margin-top: 5px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+main div.item-list > .item > .content {
+  width: 100%;
+  font-size: 20px;
+  line-height: 24px;
+  user-select: none;
+}
+main div.item-list > .item > button.delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+  width: 30px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #9a9a9a;
+  font-size: 14px;
+  line-height: 30px;
+  outline: none;
+  user-select: none;
+  z-index: 100;
+}
+main div.item-list > .item > button.delete-button:hover {
+  cursor: pointer;
+  color: #4a4a4a;
+}
+main div.item-list > .message {
+  padding: 30px 10px;
+  color: #9a9a9a;
+  text-align: center;
+}
+main form.todo-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+main form.todo-form input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 20px;
+}
+main form.todo-form input:focus {
+  outline: none;
+}
+main form.todo-form label {
+  display: block;
+  color: #3a3a3a;
+  font-size: 24px;
+}
+main form.todo-form label + input {
+  margin-top: 20px;
 }
