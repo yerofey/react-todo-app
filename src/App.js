@@ -101,7 +101,7 @@ const App = () => {
               </span>
             </button>
           </div>
-          <div className="message" id="message">
+          <div className="message" id="message" style={{'display': 'none'}}>
             You don't have any tasks yet :(
           </div>
           
