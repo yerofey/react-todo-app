@@ -7,3 +7,4 @@ Simple React TODO App
 - [ ] Editing tasks
 - [ ] Reordering tasks
 - [x] Saving in LocalStorage 
+- [ ] Fix Mobile View
