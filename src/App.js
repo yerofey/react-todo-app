@@ -81,7 +81,7 @@ const App = () => {
     <div>
       <main>
         <div className="item-list">
-          <div className="buttons" id="buttons">
+          <div className="buttons" id="buttons" style={{'display': 'none'}}>
             <button className="done-button" id="checkAllButton" onClick={markAllDone}>
               <Checkbox
                 checked
