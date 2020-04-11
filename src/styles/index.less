@@ -186,36 +186,62 @@ main {
         left: 0;
 
 
-        input {
-            margin-bottom: 5px;
+        > div.line {
+            position: relative;
+
             width: 100%;
-            padding: 10px 15px;
 
-            border: 1px solid #ccc;
-            
-            font-size: 20px;
 
-            @media only screen and (max-device-width: 600px) {
-                margin-bottom: 0;
+            > button {
+                position: absolute;
+                top: 6px;
+                right: 6px;
 
-                border-right: none;
-                border-left: none;
-            }
-        
+                width: 40px;
+                height: 40px;
 
-            &:focus {
+                background: rgb(136, 136, 139);
+                border: none;
+                border-radius: 4px;
+
+                color: #e1eaf3;
+                font-size: 18px;
+                text-align: center;
+
                 outline: none;
-            }
-        }
 
-        label {
-            display: block;
-        
-            color: #3a3a3a;
-            font-size: 24px;
-        
-            & + input {
-                margin-top: 20px;
+                &:hover {
+                    background: rgb(131, 131, 134);
+
+                    cursor: pointer;
+                }
+
+
+                > svg {
+                    margin-top: 6px;
+                }
+            }
+    
+            > input {
+                margin-bottom: 5px;
+                width: 100%;
+                padding: 10px 50px 10px 15px;
+    
+                border: 1px solid #ccc;
+                
+                font-size: 20px;
+    
+                @media only screen and (max-device-width: 600px) {
+                    margin-bottom: 0;
+    
+                    border-right: none;
+                    border-left: none;
+                }
+            
+    
+                &:focus {
+                    outline: none;
+                }
             }
         }
     }

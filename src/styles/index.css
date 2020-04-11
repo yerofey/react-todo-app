@@ -137,28 +137,45 @@ main form.todo-form {
   bottom: 0;
   left: 0;
 }
-main form.todo-form input {
+main form.todo-form > div.line {
+  position: relative;
+  width: 100%;
+}
+main form.todo-form > div.line > button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 40px;
+  height: 40px;
+  background: #88888b;
+  border: none;
+  border-radius: 4px;
+  color: #e1eaf3;
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+}
+main form.todo-form > div.line > button:hover {
+  background: #838386;
+  cursor: pointer;
+}
+main form.todo-form > div.line > button > svg {
+  margin-top: 6px;
+}
+main form.todo-form > div.line > input {
   margin-bottom: 5px;
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 50px 10px 15px;
   border: 1px solid #ccc;
   font-size: 20px;
 }
 @media only screen and (max-device-width: 600px) {
-  main form.todo-form input {
+  main form.todo-form > div.line > input {
     margin-bottom: 0;
     border-right: none;
     border-left: none;
   }
 }
-main form.todo-form input:focus {
+main form.todo-form > div.line > input:focus {
   outline: none;
-}
-main form.todo-form label {
-  display: block;
-  color: #3a3a3a;
-  font-size: 24px;
-}
-main form.todo-form label + input {
-  margin-top: 20px;
 }

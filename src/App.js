@@ -6,7 +6,7 @@ import Checkbox from 'rc-checkbox';
 import 'rc-checkbox/assets/index.css';
 // icons
 import { IconContext } from 'react-icons';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash, FaArrowUp } from 'react-icons/fa';
 
 const App = () => {
   const [newTodo, setNewTodo] = useState('');
@@ -36,6 +36,12 @@ const App = () => {
 
     // reset input
     setNewTodo('');
+
+    // scroll to bottom
+    setTimeout(() => {
+      const list = document.getElementById('list');
+      list.scrollTop = list.scrollHeight - list.clientHeight;
+    }, 1);
   }, [newTodo, todos, setTodos]);
 
   const changeTodo = useCallback((todo, index) => (event) => {
@@ -100,7 +106,7 @@ const App = () => {
             </span>
           </button>
         </div>
-        <div className="item-list">
+        <div className="item-list" id="list">
           <div className="message" id="message" style={{'display': 'none'}}>
             You don't have any tasks yet :(
           </div>
@@ -132,6 +138,9 @@ const App = () => {
               autoComplete="off"
               placeholder="Add new task"
             />
+            <button type="submit">
+              <FaArrowUp/>
+            </button>
           </div>
         </form>
       </main>
