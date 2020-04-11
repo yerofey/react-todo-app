@@ -1,4 +1,7 @@
-@import 'styles/reset.min.css';
+@import 'reset.css';
+:root {
+  --vh: 100%;
+}
 html,
 body {
   margin: 0;
@@ -13,6 +16,7 @@ main {
   margin: 0 auto;
   width: 600px;
   height: 100vh;
+  height: var(--vh);
 }
 @media only screen and (max-device-width: 600px) {
   main {
@@ -56,14 +60,15 @@ main div.buttons > button > span:not(.rc-checkbox) {
   margin-left: 9px;
 }
 main div.item-list {
-  max-height: calc(100vh - 65px);
-  min-height: calc(100vh - 65px);
+  height: calc(100vh - 65px);
+  height: calc(var(--vh) - 65px);
   padding-top: 60px;
   overflow-y: scroll;
 }
 @media only screen and (max-device-width: 600px) {
   main div.item-list {
-    padding-top: 60px;
+    height: var(--vh);
+    padding-bottom: 60px;
   }
 }
 main div.item-list > .item {

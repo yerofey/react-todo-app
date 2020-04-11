@@ -1,5 +1,9 @@
-@import './styles/reset.min.css';
+@import 'reset.css';
 
+
+:root {
+    --vh: 100%;
+}
 
 html,
 body {
@@ -18,6 +22,7 @@ main {
     margin: 0 auto;
     width: 600px;
     height: 100vh;
+    height: var(--vh);
 
     @media only screen and (max-device-width: 600px) {
         width: 100%;
@@ -75,17 +80,17 @@ main {
     }
 
     div.item-list {
-        @height: calc(~'100vh - 65px');
+        @height: var(--vh);
+        height: calc(~'100vh - 65px');
+        height: calc(~'@{height} - 65px');
+
+        padding-top: 60px;
 
         @media only screen and (max-device-width: 600px) {
-            @height: 100vh;
+            height: @height;
 
-            padding-top: 60px;
+            padding-bottom: 60px;
         }
-
-        max-height: @height;
-        min-height: @height;
-        padding-top: 60px;
 
         overflow-y: scroll;
 

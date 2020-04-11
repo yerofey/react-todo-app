@@ -163,4 +163,9 @@ const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 }
 
+const appHeight = () => {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+}
+window.addEventListener('resize', appHeight);
+
 export default App;
