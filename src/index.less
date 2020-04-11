@@ -13,52 +13,81 @@ body {
 }
 
 main {
+    position: relative;
+
     margin: 0 auto;
     width: 600px;
+    height: 100vh;
+
+    @media only screen and (max-device-width: 600px) {
+        width: 100%;
+        max-width: 100%;
+    }
 
 
-    div.item-list {
-        @height: calc(~'100vh - 74px');
-        max-height: @height;
-        min-height: @height;
+    div.buttons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
 
-        overflow-y: scroll;
+        margin: 0;
+        padding: 10px 0;
 
+        background: #fff;
 
-        > .buttons {
-            margin: 5px 0;
-            padding: 10px 0;
+        z-index: 100;
 
-
-            > button {
-                padding: 5px 9px;
-
-                background-color: #fff;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-
-                color: #3a3a3a;
-
-                outline: none;
-                user-select: none;
+        @media only screen and (max-device-width: 600px) {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
 
 
-                &:hover {
-                    background-color: #eeeef7;
-                    cursor: pointer;
-                }
+        > button {
+            padding: 5px 9px;
+
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+
+            color: #3a3a3a;
+
+            outline: none;
+            user-select: none;
 
 
-                & + button {
-                    margin-left: 10px;
-                }
+            &:hover {
+                background-color: #eeeef7;
+                cursor: pointer;
+            }
 
 
-                > span:not(.rc-checkbox) {
-                    margin-left: 9px;
-                }
+            & + button {
+                margin-left: 10px;
+            }
+
+
+            > span:not(.rc-checkbox) {
+                margin-left: 9px;
             }
         }
+    }
+
+    div.item-list {
+        @height: calc(~'100vh - 65px');
+
+        @media only screen and (max-device-width: 600px) {
+            @height: 100vh;
+
+            padding-top: 60px;
+        }
+
+        max-height: @height;
+        min-height: @height;
+        padding-top: 60px;
+
+        overflow-y: scroll;
 
 
         > .item {
@@ -68,6 +97,11 @@ main {
             padding: 10px;
 
             border-bottom: 1px solid #ccc;
+
+            @media only screen and (max-device-width: 600px) {
+                padding-right: 15px;
+                padding-left: 15px;
+            }
 
 
             &:hover {
@@ -141,16 +175,29 @@ main {
     }
 
     form.todo-form {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
 
         input {
+            margin-bottom: 5px;
             width: 100%;
             padding: 10px 15px;
-        
+
+            border: 1px solid #ccc;
+            
             font-size: 20px;
+
+            @media only screen and (max-device-width: 600px) {
+                margin-bottom: 0;
+
+                border-right: none;
+                border-left: none;
+            }
         
+
             &:focus {
                 outline: none;
             }

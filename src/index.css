@@ -9,19 +9,34 @@ body {
   font-size: 16px;
 }
 main {
+  position: relative;
   margin: 0 auto;
   width: 600px;
+  height: 100vh;
 }
-main div.item-list {
-  max-height: calc(100vh - 74px);
-  min-height: calc(100vh - 74px);
-  overflow-y: scroll;
+@media only screen and (max-device-width: 600px) {
+  main {
+    width: 100%;
+    max-width: 100%;
+  }
 }
-main div.item-list > .buttons {
-  margin: 5px 0;
+main div.buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
   padding: 10px 0;
+  background: #fff;
+  z-index: 100;
 }
-main div.item-list > .buttons > button {
+@media only screen and (max-device-width: 600px) {
+  main div.buttons {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+main div.buttons > button {
   padding: 5px 9px;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -30,21 +45,38 @@ main div.item-list > .buttons > button {
   outline: none;
   user-select: none;
 }
-main div.item-list > .buttons > button:hover {
+main div.buttons > button:hover {
   background-color: #eeeef7;
   cursor: pointer;
 }
-main div.item-list > .buttons > button + button {
+main div.buttons > button + button {
   margin-left: 10px;
 }
-main div.item-list > .buttons > button > span:not(.rc-checkbox) {
+main div.buttons > button > span:not(.rc-checkbox) {
   margin-left: 9px;
+}
+main div.item-list {
+  max-height: calc(100vh - 65px);
+  min-height: calc(100vh - 65px);
+  padding-top: 60px;
+  overflow-y: scroll;
+}
+@media only screen and (max-device-width: 600px) {
+  main div.item-list {
+    padding-top: 60px;
+  }
 }
 main div.item-list > .item {
   position: relative;
   display: block;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+}
+@media only screen and (max-device-width: 600px) {
+  main div.item-list > .item {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 main div.item-list > .item:hover {
   background-color: #f2f4f7;
@@ -95,13 +127,24 @@ main div.item-list > .message {
   text-align: center;
 }
 main form.todo-form {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 main form.todo-form input {
+  margin-bottom: 5px;
   width: 100%;
   padding: 10px 15px;
+  border: 1px solid #ccc;
   font-size: 20px;
+}
+@media only screen and (max-device-width: 600px) {
+  main form.todo-form input {
+    margin-bottom: 0;
+    border-right: none;
+    border-left: none;
+  }
 }
 main form.todo-form input:focus {
   outline: none;

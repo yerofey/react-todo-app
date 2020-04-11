@@ -80,27 +80,27 @@ const App = () => {
   return (
     <div>
       <main>
+        <div className="buttons" id="buttons" style={{'display': 'none'}}>
+          <button className="done-button" id="checkAllButton" onClick={markAllDone}>
+            <Checkbox
+              checked
+              onChange={() => {}}
+              disabled={false}
+            />
+            <span>
+              Check All
+            </span>
+          </button>
+          <button className="delete-button" id="deleteAllButton" onClick={deleteAll}>
+            <IconContext.Provider value={{ color: '#9a9a9a', size: '14px' }}>
+              <FaTrash/>
+            </IconContext.Provider>
+            <span>
+              Delete All
+            </span>
+          </button>
+        </div>
         <div className="item-list">
-          <div className="buttons" id="buttons" style={{'display': 'none'}}>
-            <button className="done-button" id="checkAllButton" onClick={markAllDone}>
-              <Checkbox
-                checked
-                onChange={() => {}}
-                disabled={false}
-              />
-              <span>
-                Check All
-              </span>
-            </button>
-            <button className="delete-button" id="deleteAllButton" onClick={deleteAll}>
-              <IconContext.Provider value={{ color: '#9a9a9a', size: '14px' }}>
-                <FaTrash/>
-              </IconContext.Provider>
-              <span>
-                Delete All
-              </span>
-            </button>
-          </div>
           <div className="message" id="message" style={{'display': 'none'}}>
             You don't have any tasks yet :(
           </div>
