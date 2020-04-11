@@ -23,7 +23,6 @@ const App = () => {
       return;
     }
 
-    // add new item
     setTodos([
       ...todos,
       {
@@ -34,14 +33,9 @@ const App = () => {
       }
     ]);
 
-    // reset input
     setNewTodo('');
-
-    // scroll to bottom
-    setTimeout(() => {
-      const list = document.getElementById('list');
-      list.scrollTop = list.scrollHeight - list.clientHeight;
-    }, 1);
+    scrollListToBottom();
+    focusOnInput();
   }, [newTodo, todos, setTodos]);
 
   const changeTodo = useCallback((todo, index) => (event) => {
@@ -70,6 +64,17 @@ const App = () => {
   const deleteAll = useCallback(() => {
     setTodos([]);
   }, [setTodos]);
+
+  const scrollListToBottom = () => {
+    setTimeout(() => {
+      const list = document.getElementById('list');
+      list.scrollTop = list.scrollHeight - list.clientHeight;
+    }, 1);
+  }
+
+  const focusOnInput = () => {
+    document.getElementById('newTodo').focus();
+  }
 
   useEffect(() => {
     if (todos.length === 0) {
